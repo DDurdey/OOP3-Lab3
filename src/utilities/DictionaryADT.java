@@ -24,6 +24,10 @@ import exceptions.KeyNotFoundException;
 
 public interface DictionaryADT<K,V>
 {
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 	/**
 	 * Inserts a new key and value into the dictionary
 	 * 
@@ -38,6 +42,29 @@ public interface DictionaryADT<K,V>
 	 * @param value - the value to be paired with the key
 	 * @throws DuplicateKeyException - for if the key already exists in the dictionary
 	 */
+<<<<<<< Updated upstream
 	
 	void insert(K key, V value) throws DuplicateKeyException;
+=======
+
+	void insert(K key, V value) throws DuplicateKeyException;
+
+
+  /**
+   * This method changes the value stored for a given key.
+   * 
+   * Preconditions: Make sure the key already exists in the dictionary.
+   * Postconditions: If exists then, replace its old value with the new one.
+   * 
+   * @param key the key for which the value will be updated.
+   * @return the value thats with the given key.
+   * @throws IllegalArgumentException if the key is not foud.
+   */
+
+  void update(K key, V value);
+
+
+
+
+>>>>>>> Stashed changes
 }
