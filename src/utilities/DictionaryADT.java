@@ -18,4 +18,18 @@ package utilities;
 public interface DictionaryADT<K,V>
 {
 
+      void update(K key, V value);
+
+    /**
+     * This method changes the value stored for a given key.
+     * 
+     * Preconditions: Make sure the key already exists in the dictionary.
+     * Postconditions: If exists then, replace its old value with the new one.
+     * 
+     * @param key the key for which the value will be updated.
+     * @return the value thats with the given key.
+     * @throws IllegalArgumentException if the key is not foud.
+     */
+
+
 }
