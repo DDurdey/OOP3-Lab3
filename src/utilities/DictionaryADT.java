@@ -7,7 +7,7 @@ import exceptions.KeyNotFoundException;
  * DictionaryADT.java
  *
  * @author Daniel Durdey
- * @author
+ * @author Lyub Striletskyy
  * @author
  * @author
  * 
