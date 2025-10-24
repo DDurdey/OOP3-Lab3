@@ -1,10 +1,17 @@
 package utilities;
 
+import exceptions.DuplicateKeyException;
+import exceptions.KeyNotFoundException;
+
 /**
  * DictionaryADT.java
  *
- * @author your name
- * @version major.minor revision number starting at 1.0	
+ * @author Daniel Durdey
+ * @author Lyub Striletskyy
+ * @author Edwin Wong
+ * @author
+ * 
+ * @version 1.0
  * 
  * <p>
  * The <code>DictionaryADT</code> interface is designed to be used as a basis for 
