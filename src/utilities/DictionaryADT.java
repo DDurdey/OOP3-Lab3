@@ -42,6 +42,23 @@ public interface DictionaryADT<K,V>
 
 	void insert(K key, V value) throws DuplicateKeyException;
 
+	
+	/**
+     * Removes a key and its associated value from the dictionary
+     * 
+     * Preconditions:
+     * 	key cannot be null
+     * 	key must exist in the dictionary
+     * 
+     * Postconditions:
+     * 	The key and value pair are removed from the dictionary
+     * 	The size of the dictionary is decreased by one
+     * 
+     * @param key - the key to be removed from the dictionary
+     * @return the value that was associated with the removed key
+     * @throws KeyNotFoundException - for if the key does not exist in the dictionary
+     */
+    V remove(K key) throws KeyNotFoundException;
 
   /**
    * This method changes the value stored for a given key.
