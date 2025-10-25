@@ -9,7 +9,7 @@ import exceptions.KeyNotFoundException;
  * @author Daniel Durdey
  * @author Lyub Striletskyy
  * @author Edwin Wong
- * @author
+ * @author Hayden Dittmann
  * 
  * @version 1.0
  * 
@@ -61,19 +61,32 @@ public interface DictionaryADT<K,V>
 	
     void remove(K key) throws KeyNotFoundException;
 
-  /**
-   * This method changes the value stored for a given key.
-   * 
-   * Preconditions: Make sure the key already exists in the dictionary.
-   * Postconditions: If exists then, replace its old value with the new one.
-   * 
-   * @param key the key for which the value will be updated.
-   * @return the value thats with the given key.
-   * @throws IllegalArgumentException if the key is not foud.
-   */
+    /**
+     * This method changes the value stored for a given key.
+     * 
+     * Preconditions: Make sure the key already exists in the dictionary.
+     * Postconditions: If exists then, replace its old value with the new one.
+     * 
+     * @param key the key for which the value will be updated.
+     * @return the value thats with the given key.
+     * @throws IllegalArgumentException if the key is not found.
+     */
 
   void update(K key, V value);
 
+    
+    /**
+     * Looks up the value associated with the given key.
+     * 
+     * Preconditions: Make sure the key exists in the dictionary.
+     * Postconditions: If exists then, return the value associated with the key.
+     * 
+     * @param the specific key to look up.
+     * @return the identity of the key.
+     * @throws KeyNotFoundException if the key is not found.
+     */
+    
+    void lookup(K key) throws KeyNotFoundException;
 
 
 
