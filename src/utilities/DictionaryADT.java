@@ -69,10 +69,10 @@ public interface DictionaryADT<K,V>
      * 
      * @param key the key for which the value will be updated.
      * @return the value thats with the given key.
-     * @throws IllegalArgumentException if the key is not found.
+     * @throws KeyNotFoundException if the key is not found.
      */
 
-    void update(K key, V value);
+    void update(K key, V value) throws KeyNotFoundException;
 
     
     /**
@@ -82,12 +82,23 @@ public interface DictionaryADT<K,V>
      * Postconditions: If exists then, return the value associated with the key.
      * 
      * @param the specific key to look up.
-     * @return the identity of the key.
+     * @return the value of the looked up key.
      * @throws KeyNotFoundException if the key is not found.
      */
     
     void lookup(K key) throws KeyNotFoundException;
-
-
-
+    
+    /**
+     * Returns the number of pairs that are currently stored in the dictionary.
+     * 
+     * @return the dictionaries size.
+     */
+    int size();
+    
+    /**
+     * Checks is the dictionary has any pairs inside it.
+     * 
+     * @return true if it is empty, false if it in not empty. 
+     */
+    boolean isEmpty();
 }
