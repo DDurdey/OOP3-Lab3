@@ -58,7 +58,7 @@ public interface DictionaryADT<K,V>
      * @return the value that was associated with the removed key
      * @throws KeyNotFoundException - for if the key does not exist in the dictionary
      */
-    V remove(K key) throws KeyNotFoundException;
+    void remove(K key) throws KeyNotFoundException;
 
   /**
    * This method changes the value stored for a given key.
