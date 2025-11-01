@@ -30,6 +30,22 @@ public class Dictionary<K,V> implements DictionaryADT<K,V>
 			keys.add(key);
 		values.add(value);
 	}
+
+
+	@Override
+    public V remove(K key) {
+        if (key == null)
+            throw new IllegalArgumentException("Key cannot be null!");
+            
+        int index = keys.indexOf(key);
+        if (index == -1)
+            return null;
+            
+        keys.remove(index);
+        return values.remove(index);
+    }
+
+	
 	
 	@Override
 	public String toString() {
