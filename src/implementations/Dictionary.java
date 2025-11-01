@@ -45,6 +45,14 @@ public class Dictionary<K,V> implements DictionaryADT<K,V>
         return values.remove(index);
     }
 
+
+	public int size() {
+        return keys.size();
+    }
+    
+    public boolean isEmpty() {
+        return keys.isEmpty();
+    }
 	
 	
 	@Override
