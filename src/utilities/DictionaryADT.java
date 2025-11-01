@@ -1,17 +1,12 @@
 package utilities;
 
 import exceptions.DuplicateKeyException;
-import exceptions.KeyNotFoundException;
 
 /**
  * DictionaryADT.java
  *
- * @author Daniel Durdey
- * @author Lyub Striletskyy
- * @author Edwin Wong
- * @author
- * 
- * @version 1.0
+ * @author kitty
+ * @version 1.1
  * 
  * <p>
  * The <code>DictionaryADT</code> interface is designed to be used as a basis for 
@@ -24,56 +19,73 @@ import exceptions.KeyNotFoundException;
 
 public interface DictionaryADT<K,V>
 {
-
 	/**
-	 * Inserts a new key and value into the dictionary
+	 * Constructor method to create a new Dictionary object.
 	 * 
-	 * Preconditions:
-	 * 	key cannot be null and cannot exist in the dictionary already
-	 * 	value cannot be null
+	 * Precondition: None.
 	 * 
-	 * Postconditions:
-	 * 	The new key and value pair are now in the dictionary
+	 * Postcondition: A dictionary object is created and its size is 
+	 * initialized to the value in the argument, or a default of 10.
 	 * 
-	 * @param key - must be a unique key
-	 * @param value - the value to be paired with the key
-	 * @throws DuplicateKeyException - for if the key already exists in the dictionary
+	 * @param size Optional: the size of the new dictionary, default is 10.
 	 */
+	public void create( int size );
 
-	void insert(K key, V value) throws DuplicateKeyException;
-
-	
 	/**
-     * Removes a key and its associated value from the dictionary
-     * 
-     * Preconditions:
-     * 	key cannot be null
-     * 	key must exist in the dictionary
-     * 
-     * Postconditions:
-     * 	The key and value pair are removed from the dictionary
-     * 	The size of the dictionary is decreased by one
-     * 
-     * @param key - the key to be removed from the dictionary
-     * @return the value that was associated with the removed key
-     * @throws KeyNotFoundException - for if the key does not exist in the dictionary
-     */
-    V remove(K key) throws KeyNotFoundException;
+	 * Mutator method to insert a new key-value pair into the Dictionary.
+	 * 
+	 * Precondition: A valid dictionary object exists and non-null values
+	 * are passed as arguments.
+	 * 
+	 * Postcondition: The new key-value pair is added to the Dictionary.
+	 * 
+	 * @param K key
+	 * @param V value
+	 * @return true if key-value pair has been added successfully.
+	 * 
+	 * @throws DuplicateKeyException is thrown if key already exist.
+	 */
+	public boolean insert( K key, V value ) throws DuplicateKeyException;
 
-  /**
-   * This method changes the value stored for a given key.
-   * 
-   * Preconditions: Make sure the key already exists in the dictionary.
-   * Postconditions: If exists then, replace its old value with the new one.
-   * 
-   * @param key the key for which the value will be updated.
-   * @return the value thats with the given key.
-   * @throws IllegalArgumentException if the key is not foud.
-   */
+	/**
+	 * Mutator method to remove a key-value pair from the Dictionary.
+	 * 
+	 * Precondition: A valid dictionary object exists and a non-null value
+	 * is passed as argument.
+	 * 
+	 * Postcondition: The key-value pair is deleted from the Dictionary.
+	 * 
+	 * @param K key
+	 * @return the value of the key removed, null if key does not exist.
+	 */
+	public V remove( K key );
 
-  void update(K key, V value);
+	/**
+	 * Mutator method to update a key-value pair from the Dictionary.
+	 * 
+	 * Precondition: A valid dictionary object exists and a non-null value
+	 * is passed as argument.
+	 * 
+	 * Postcondition: The value of the key is changed in the Dictionary.
+	 * 
+	 * @param K key
+	 * @param V the new value
+	 * @return true if key-value pair has been changed successfully, false 
+	 * if key does not exist.
+	 */
+	public boolean update( K key, V value );
 
-
-
+	/**
+	 * Accessor method to retrieve the value of a key from the Dictionary.
+	 * 
+	 * Precondition: A valid dictionary object exists and a non-null value
+	 * is passed as argument.
+	 * 
+	 * Postcondition: The value of the key is returned from the Dictionary.
+	 * 
+	 * @param K key
+	 * @return the value of the key, null if key does not exist.
+	 */
+	public V lookup( K key );
 
 }
